@@ -2,9 +2,9 @@ import React from "react";
 
 function ResultsList({ results, statistics }) {
   return (
-    <div>
-      <h2>Results</h2>
-      <ul>
+    <div className="mt-4 ">
+      <h2 className="text-black text-bold text-lg font-bold">Results :</h2>
+      <ul className="text-black ">
         {results.map((result) => (
           <li key={result.requestNumber}>
             Request {result.requestNumber}: {result.statusCode} -{" "}
@@ -12,11 +12,11 @@ function ResultsList({ results, statistics }) {
             {result.responseTime ? parseFloat(result.responseTime.toFixed(4)) : "N/A"} ms
 
           </li>
-        ))}
+        ))} 
       </ul>
       
       {statistics && (
-        <div className="bg-black p-4 rounded-md shadow-md mt-4">
+        <div className="border-2 border-slate-950 p-4 rounded-md  text-black">
           <p>Total Requests: {statistics.totalRequests}</p>
           <p>Successful Requests: {statistics.successfulRequests}</p>
           <p>Failed Requests: {statistics.failedRequests}</p>
@@ -25,7 +25,7 @@ function ResultsList({ results, statistics }) {
         </div>
       )}
     </div>
-  );
+  );  
 }
 
 export default ResultsList;

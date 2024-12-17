@@ -4,7 +4,8 @@ import LoadTestForm from "./components/LoadTestForm";
 import ResultsList from "./components/ResultsList";
 import ResourceUsage from "./components/ResourceUsage";
 import ClearResults from "./components/ClearResults";
-
+import Help from "./Footer/Help";
+import Info from "./Footer/info";
 
 function App() {
   const [url, setUrl] = useState("");
@@ -125,7 +126,7 @@ function App() {
   return (
     <div className="h-screen w-full flex justify-center">
       <div>
-        <h1 className="font-bold text-4xl mb-4">Load Testing</h1>
+        <h1 className="text-3xl flex justify-center font-bold text-black rounded-md4xl mb-4 ">Load Testing</h1>
         <LoadTestForm
           url={url}
           setUrl={setUrl}
@@ -137,7 +138,11 @@ function App() {
         />
         <ResultsList results={results} statistics={statistics} />
         <ResourceUsage cpuUsage={cpuUsage} ramUsage={ramUsage} />
+        <div className="flex gap-2">
         <ClearResults clearResults={clearResults} />
+        <Help />
+        <Info />
+        </div>
       </div>
     </div>
   );

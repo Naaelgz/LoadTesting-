@@ -20,38 +20,38 @@ function LoadTestForm({
   };
 
   return (
-    <div>
-      <div>
-        <label>
+    <div className="text-black ">
+      <div className="flex flex-col">
+        <label className="mr-4">
           URL:
-          <input
+        </label>
+          <input className="border-2 border-slate-950 bg-white rounded-lg mt-1 px-2"
             type="text"
             value={url}
             onChange={(e) => setUrl(e.target.value)}
           />
-        </label>
       </div>
-      <div>
-        <label>
+      <div className="flex flex-col mt-1">
+        <label className="mr-4">
           Number of Requests:
-          <input
+        </label>
+          <input className="border-2 mt-1 border-slate-950 bg-white rounded-lg px-2"
             type="number"
             value={numberOfRequests}
             onChange={(e) => setNumberOfRequests(Number(e.target.value))}
           />
-        </label>
       </div>
-      <div>
-        <label>
+      <div className="flex flex-col mt-1">
+        <label className="mr-4">
           Timeout (seconds):
-          <input
+        </label>
+          <input className="border-2 mt-1 border-slate-950 bg-white rounded-lg px-2"
             type="number"
             value={timeout}
             onChange={(e) => setTimeoutValue(Number(e.target.value))}
           />
-        </label>
       </div>
-      <button className="bg-white text-black rounded-md p-2" onClick={handleStartTest}>Start Load Test</button>
+      <button className="bg-lime-700 text-white rounded-md p-2 mt-4" onClick={handleStartTest}>Start Load Test</button>
     </div>
   );
   
